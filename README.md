@@ -4,6 +4,7 @@ The design is fully responsive, ensuring a seamless experience across desktop, t
 
 
 🚀 Features
+
 🧾 Product cards with image, name, price, and rating
 🔍 Filter products by category
 ↕️ Sort products by price and rating
@@ -12,6 +13,7 @@ The design is fully responsive, ensuring a seamless experience across desktop, t
 
 
 🛠️ Tech Stack
+
 HTML5
 CSS3 (Flexbox / Grid)
 JavaScript (Vanilla)

@@ -9,37 +9,36 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header class="header">
         <h1>My Online Store</h1>
         <nav>
-            <ul>
-                <li>Home</li>
-                <li>Electronics</li>
-                <li>Fashion</li>
-                <li>Books</li>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Books</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Section -->
-    <main>
-        <section class="categories">
-            <h2>Categories</h2>
-            <div class="category-list">
-                <button>Electronics</button>
-                <button>Fashion</button>
-                <button>Home Appliances</button>
-                <button>Books</button>
-            </div>
-        </section>
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-list">
+            <button class="category-btn">Electronics</button>
+            <button class="category-btn">Fashion</button>
+            <button class="category-btn">Home Appliances</button>
+            <button class="category-btn">Books</button>
+        </div>
+    </section>
 
-        <section class="products">
-            <h2>Products</h2>
-            <div id="product-container">
-                <!-- Product cards will come here -->
-            </div>
-        </section>
-    </main>
+    <!-- Product Section -->
+    <section class="products">
+        <h2>Products</h2>
+        <div id="product-container" class="product-grid">
+            <!-- Product cards will be added here dynamically -->
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

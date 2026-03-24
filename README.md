@@ -1,4 +1,4 @@
-# Online-Store-Homepage-with-Product-Categories-
+#Roshani Online-Store-Homepage-with-Product-Categories-
 A responsive online store homepage built using HTML, CSS, and JavaScript that showcases products in a clean and user-friendly layout. The application features dynamic product cards displaying images, names, prices, and ratings, along with interactive filtering by category and sorting by price and rating.
 The design is fully responsive, ensuring a seamless experience across desktop, tablet, and mobile devices. This project demonstrates core front-end development skills, including DOM manipulation, event handling, and responsive UI design.
 

@@ -1,51 +1,41 @@
-// Product Data
-const products = [
-    {
-        name: "Smartphone",
-        price: 15000,
-        category: "Electronics",
-        image: "https://via.placeholder.com/150"
-    },
-    {
-        name: "T-Shirt",
-        price: 500,
-        category: "Fashion",
-        image: "https://via.placeholder.com/150"
-    },
-    {
-        name: "Microwave",
-        price: 7000,
-        category: "Home Appliances",
-        image: "https://via.placeholder.com/150"
-    },
-    {
-        name: "Book",
-        price: 300,
-        category: "Books",
-        image: "https://via.placeholder.com/150"
-    }
-];
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import connectDB from './config/db.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
-// Display Products
-const container = document.getElementById("product-container");
+import productRoutes from './routes/productRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 
-function displayProducts(productList) {
-    container.innerHTML = "";
+dotenv.config();
 
-    productList.forEach(product => {
-        const card = document.createElement("div");
-        card.classList.add("product-card");
+// Connect to MongoDB database
+connectDB(); 
 
-        card.innerHTML = `
-            <img src="${product.image}">
-            <h3>${product.name}</h3>
-            <p>₹${product.price}</p>
-            <button>Add to Cart</button>
-        `;
+const app = express();
 
-        container.appendChild(card);
-    });
-}
+// Body parser
+app.use(express.json());
+app.use(cors());
 
-// Initial Load
-displayProducts(products);
+// Health Check route
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+// Modular Routes
+app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/orders', orderRoutes);
+
+// Error middleware wrappers
+app.use(notFound);
+app.use(errorHandler);
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+});
+
